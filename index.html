@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --orange: #F97316;
     --orange-dim: rgba(249,115,22,0.12);
@@ -20,101 +19,61 @@
     --border: rgba(255,255,255,0.08);
     --text: #FFFFFF;
     --muted: #9CA3AF;
-    --good: #22C55E;
-    --fix: #EF4444;
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Barlow', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5vw;
-    height: 64px;
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
+  body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 64px; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.5px; color: var(--text); }
   .nav-logo span { color: var(--orange); }
   .nav-badge { font-size: 11px; font-weight: 600; color: var(--orange); letter-spacing: 1.5px; background: var(--orange-dim); padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(249,115,22,0.25); }
-
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 120px 5vw 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 5vw 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%); pointer-events: none; }
   .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2.5px; color: var(--orange); text-transform: uppercase; margin-bottom: 20px; }
   .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(72px, 14vw, 140px); font-weight: 900; line-height: 0.9; letter-spacing: -2px; margin-bottom: 24px; }
   .hero h1 em { font-style: normal; color: var(--orange); }
   .hero-sub { font-size: clamp(16px, 2.5vw, 20px); color: var(--muted); max-width: 520px; margin: 0 auto 40px; line-height: 1.6; }
-  .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.5px; padding: 16px 36px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s; }
-  .hero-cta:hover { opacity: 0.9; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.5px; padding: 16px 36px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s; }
+  .btn:hover { opacity: 0.9; }
   .hero-steps { display: flex; align-items: center; gap: 8px; margin-top: 48px; flex-wrap: wrap; justify-content: center; }
   .step-pill { font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; }
   .step-arrow { color: var(--border); font-size: 14px; }
-
   section { padding: 100px 5vw; }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; color: var(--orange); text-transform: uppercase; margin-bottom: 16px; }
   .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 16px; }
   .section-sub { color: var(--muted); font-size: 17px; max-width: 560px; }
-
   .how { background: var(--surface); }
   .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; margin-top: 60px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
   .step-card { background: var(--bg); padding: 36px 28px; }
   .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 72px; font-weight: 900; color: rgba(249,115,22,0.12); line-height: 1; margin-bottom: 16px; }
   .step-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
   .step-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
-
   .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
   .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px 24px; text-align: center; }
   .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 8px; }
   .metric-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .metric-desc { font-size: 13px; color: var(--muted); }
   .metric-tol { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--muted); background: var(--surface2); padding: 4px 10px; border-radius: 20px; }
-
   .about { background: var(--surface); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
   .about-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
   .about-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--muted); letter-spacing: 0.5px; }
   .about-card p { font-size: 15px; color: var(--text); line-height: 1.8; }
-  .about-card a { color: var(--orange); text-decoration: none; }
-
+  .privacy-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-top: 48px; display: flex; flex-direction: column; gap: 16px; }
+  .privacy-box p { color: var(--muted); font-size: 15px; line-height: 1.8; }
   footer { border-top: 1px solid var(--border); padding: 32px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; }
   .footer-logo span { color: var(--orange); }
   footer p { color: var(--muted); font-size: 13px; }
-
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-  .hero h1      { animation: fadeUp 0.6s 0.1s ease both; }
-  .hero-sub     { animation: fadeUp 0.6s 0.2s ease both; }
-  .hero-cta     { animation: fadeUp 0.6s 0.3s ease both; }
-  .hero-steps   { animation: fadeUp 0.6s 0.4s ease both; }
-
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .btn { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-steps { animation: fadeUp 0.6s 0.4s ease both; }
   @media (max-width: 640px) {
     .metrics-grid { grid-template-columns: 1fr; }
-    .about-grid   { grid-template-columns: 1fr; }
-    .hero-steps   { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .hero-steps { display: none; }
     nav { padding: 0 20px; }
     section { padding: 72px 20px; }
   }
@@ -131,7 +90,7 @@
   <p class="hero-eyebrow">AI Basketball Form Coach</p>
   <h1>Hoop<em>IQ</em></h1>
   <p class="hero-sub">Shoot. Analyse. Drill. Fix — in one session. AI pose detection tells you exactly what's wrong with your form and gives you a drill to fix it right now.</p>
-  <a class="hero-cta" href="#about">Learn More</a>
+  <a class="btn" href="#about">Learn More</a>
   <div class="hero-steps">
     <span class="step-pill">📸 Record shot</span>
     <span class="step-arrow">→</span>
@@ -149,26 +108,10 @@
     <h2 class="section-title">Four steps.<br>One session.</h2>
     <p class="section-sub">HoopIQ closes the loop other apps leave open — it doesn't just show you what's wrong, it assigns a drill and tracks whether you improved before you leave the gym.</p>
     <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <h3>Record your shot</h3>
-        <p>5-second video from the side. Place your phone 10–15 feet away at waist height so your full body is visible.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <h3>AI analyses your form</h3>
-        <p>MoveNet pose detection maps 17 body joints and measures your elbow angle, release arc, and follow-through in real time.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <h3>Get a drill instantly</h3>
-        <p>A specific drill is assigned based on your biggest deviation from ideal form. No generic advice — just the right fix.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <h3>Track your progress</h3>
-        <p>Your form score is tracked across sessions so you can see real improvement over time, not just guesswork.</p>
-      </div>
+      <div class="step-card"><div class="step-num">01</div><h3>Record your shot</h3><p>5-second video from the side. Place your phone 10–15 feet away at waist height so your full body is visible.</p></div>
+      <div class="step-card"><div class="step-num">02</div><h3>AI analyses your form</h3><p>MoveNet pose detection maps 17 body joints and measures your elbow angle, release arc, and follow-through in real time.</p></div>
+      <div class="step-card"><div class="step-num">03</div><h3>Get a drill instantly</h3><p>A specific drill is assigned based on your biggest deviation from ideal form. No generic advice — just the right fix.</p></div>
+      <div class="step-card"><div class="step-num">04</div><h3>Track your progress</h3><p>Your form score is tracked across sessions so you can see real improvement over time, not just guesswork.</p></div>
     </div>
   </div>
 </section>
@@ -179,24 +122,9 @@
     <h2 class="section-title">Three metrics.<br>Measurable results.</h2>
     <p class="section-sub">Every shot is scored against biomechanically ideal targets with clear tolerances — no vague feedback.</p>
     <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-val">90°</div>
-        <div class="metric-name">Elbow Angle</div>
-        <div class="metric-desc">The elbow should be directly under the ball at the set point for maximum accuracy.</div>
-        <div class="metric-tol">±15° tolerance</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-val">52°</div>
-        <div class="metric-name">Release Arc</div>
-        <div class="metric-desc">The optimal release angle for the highest chance of the ball going through the net.</div>
-        <div class="metric-tol">±8° tolerance</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-val">170°</div>
-        <div class="metric-name">Follow-Through</div>
-        <div class="metric-desc">Full wrist extension after release — the finishing position that locks in consistency.</div>
-        <div class="metric-tol">±20° tolerance</div>
-      </div>
+      <div class="metric-card"><div class="metric-val">90°</div><div class="metric-name">Elbow Angle</div><div class="metric-desc">The elbow should be directly under the ball at the set point for maximum accuracy.</div><div class="metric-tol">±15° tolerance</div></div>
+      <div class="metric-card"><div class="metric-val">52°</div><div class="metric-name">Release Arc</div><div class="metric-desc">The optimal release angle for the highest chance of the ball going through the net.</div><div class="metric-tol">±8° tolerance</div></div>
+      <div class="metric-card"><div class="metric-val">170°</div><div class="metric-name">Follow-Through</div><div class="metric-desc">Full wrist extension after release — the finishing position that locks in consistency.</div><div class="metric-tol">±20° tolerance</div></div>
     </div>
   </div>
 </section>
@@ -212,7 +140,7 @@
       </div>
       <div class="about-card">
         <h3>Contact</h3>
-        <p><a href="/cdn-cgi/l/email-protection#422b38383b312e2c317029707702252f232b2e6c212d2f"><span class="__cf_email__" data-cfemail="a9c0d3d3d0dac5c7da9bc29b9ce9cec4c8c0c587cac6c4">[email&#160;protected]</span></a></p>
+        <p>izzyslns2k25 [at] gmail [dot] com</p>
       </div>
       <div class="about-card">
         <h3>App</h3>
@@ -226,7 +154,23 @@
   </div>
 </section>
 
+<section id="privacy">
+  <div style="max-width:900px;margin:0 auto;">
+    <p class="section-label">Legal</p>
+    <h2 class="section-title">Privacy policy</h2>
+    <div class="privacy-box">
+      <p>HoopIQ is committed to protecting your privacy. Our full privacy policy explains what data we collect, how we use it, and your rights as a user.</p>
+      <p>Key points: video is processed on-device and never uploaded, no personal data is collected, no account required, no third-party advertising SDKs.</p>
+      <a class="btn" href="https://peaceful-peach-887.notion.site/Privacy-Policy-for-HoopIQ-332b1a59cc3a8020ad91c62f3c0b2ca7" target="_blank" style="align-self:flex-start;animation:none;">Read Full Privacy Policy →</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-logo">Hoop<span>IQ</span></div>
   <p>© 2026 Ismail Adebayo (IzzySlns) · Sydney, NSW, Australia</p>
-  <a href="https://peaceful-peach-887.notion.site/Privacy-Policy-for-HoopIQ-332
+  <a href="https://peaceful-peach-887.notion.site/Privacy-Policy-for-HoopIQ-332b1a59cc3a8020ad91c62f3c0b2ca7" target="_blank" style="color:var(--muted);font-size:13px;text-decoration:none;">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
