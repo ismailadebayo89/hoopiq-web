@@ -25,6 +25,7 @@
   }
 
   html { scroll-behavior: smooth; }
+
   body {
     font-family: 'Barlow', sans-serif;
     background: var(--bg);
@@ -34,7 +35,6 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -48,7 +48,6 @@
   .nav-logo span { color: var(--orange); }
   .nav-badge { font-size: 11px; font-weight: 600; color: var(--orange); letter-spacing: 1.5px; background: var(--orange-dim); padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(249,115,22,0.25); }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -64,172 +63,54 @@
     background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-eyebrow {
-    font-size: 12px; font-weight: 600; letter-spacing: 2.5px;
-    color: var(--orange); text-transform: uppercase; margin-bottom: 20px;
-  }
-  .hero h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(72px, 14vw, 140px);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-  }
+  .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2.5px; color: var(--orange); text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(72px, 14vw, 140px); font-weight: 900; line-height: 0.9; letter-spacing: -2px; margin-bottom: 24px; }
   .hero h1 em { font-style: normal; color: var(--orange); }
-  .hero-sub {
-    font-size: clamp(16px, 2.5vw, 20px);
-    color: var(--muted);
-    max-width: 520px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-  }
-  .hero-cta {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--orange);
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px; font-weight: 700; letter-spacing: 0.5px;
-    padding: 16px 36px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
+  .hero-sub { font-size: clamp(16px, 2.5vw, 20px); color: var(--muted); max-width: 520px; margin: 0 auto 40px; line-height: 1.6; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 0.5px; padding: 16px 36px; border-radius: 12px; text-decoration: none; transition: opacity 0.2s; }
   .hero-cta:hover { opacity: 0.9; }
-  .hero-steps {
-    display: flex; align-items: center; gap: 8px;
-    margin-top: 48px;
-    flex-wrap: wrap; justify-content: center;
-  }
-  .step-pill {
-    font-size: 13px; color: var(--muted);
-    background: var(--surface); border: 1px solid var(--border);
-    padding: 8px 16px; border-radius: 20px;
-  }
+  .hero-steps { display: flex; align-items: center; gap: 8px; margin-top: 48px; flex-wrap: wrap; justify-content: center; }
+  .step-pill { font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; }
   .step-arrow { color: var(--border); font-size: 14px; }
 
-  /* SECTION */
   section { padding: 100px 5vw; }
-  .section-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-    color: var(--orange); text-transform: uppercase; margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-  }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; color: var(--orange); text-transform: uppercase; margin-bottom: 16px; }
+  .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 16px; }
   .section-sub { color: var(--muted); font-size: 17px; max-width: 560px; }
 
-  /* HOW IT WORKS */
   .how { background: var(--surface); }
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2px;
-    margin-top: 60px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .step-card {
-    background: var(--bg);
-    padding: 36px 28px;
-    position: relative;
-  }
-  .step-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 72px; font-weight: 900;
-    color: rgba(249,115,22,0.12);
-    line-height: 1;
-    margin-bottom: 16px;
-  }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; margin-top: 60px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .step-card { background: var(--bg); padding: 36px 28px; }
+  .step-num { font-family: 'Barlow Condensed', sans-serif; font-size: 72px; font-weight: 900; color: rgba(249,115,22,0.12); line-height: 1; margin-bottom: 16px; }
   .step-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
   .step-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-  /* METRICS */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 60px;
-  }
-  .metric-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px 24px;
-    text-align: center;
-  }
-  .metric-val {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 56px; font-weight: 900;
-    color: var(--orange);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
+  .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+  .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px 24px; text-align: center; }
+  .metric-val { font-family: 'Barlow Condensed', sans-serif; font-size: 56px; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 8px; }
   .metric-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .metric-desc { font-size: 13px; color: var(--muted); }
   .metric-tol { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--muted); background: var(--surface2); padding: 4px 10px; border-radius: 20px; }
 
-  /* ABOUT */
   .about { background: var(--surface); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 48px;
-  }
-  .about-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+  .about-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
   .about-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--muted); letter-spacing: 0.5px; }
-  .about-card p, .about-card a { font-size: 15px; color: var(--text); line-height: 1.8; text-decoration: none; }
-  .about-card a { color: var(--orange); }
+  .about-card p { font-size: 15px; color: var(--text); line-height: 1.8; }
+  .about-card a { color: var(--orange); text-decoration: none; }
 
-  /* PRIVACY */
-  .privacy { }
-  .privacy-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px;
-    margin-top: 48px;
-  }
-  .privacy-box h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
-  .privacy-box p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 12px; }
-  .privacy-box p:last-child { margin-bottom: 0; }
-  .privacy-box strong { color: var(--text); }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 5vw;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-  }
+  footer { border-top: 1px solid var(--border); padding: 32px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; }
   .footer-logo span { color: var(--orange); }
   footer p { color: var(--muted); font-size: 13px; }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
   .hero-eyebrow { animation: fadeUp 0.6s ease both; }
   .hero h1      { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-sub     { animation: fadeUp 0.6s 0.2s ease both; }
   .hero-cta     { animation: fadeUp 0.6s 0.3s ease both; }
   .hero-steps   { animation: fadeUp 0.6s 0.4s ease both; }
 
-  /* RESPONSIVE */
   @media (max-width: 640px) {
     .metrics-grid { grid-template-columns: 1fr; }
     .about-grid   { grid-template-columns: 1fr; }
@@ -246,7 +127,6 @@
   <div class="nav-badge">Coming to Google Play</div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <p class="hero-eyebrow">AI Basketball Form Coach</p>
   <h1>Hoop<em>IQ</em></h1>
@@ -263,7 +143,6 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how">
   <div style="max-width:900px;margin:0 auto;">
     <p class="section-label">How it works</p>
@@ -294,7 +173,6 @@
   </div>
 </section>
 
-<!-- METRICS -->
 <section>
   <div style="max-width:900px;margin:0 auto;">
     <p class="section-label">What we measure</p>
@@ -323,7 +201,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div style="max-width:900px;margin:0 auto;">
     <p class="section-label">About</p>
@@ -331,7 +208,7 @@
     <div class="about-grid">
       <div class="about-card">
         <h3>Developer</h3>
-        <p>Izzy Solutions<br>Sydney, NSW, Australia</p>
+        <p>Ismail Adebayo (IzzySlns)<br>Sydney, NSW, Australia</p>
       </div>
       <div class="about-card">
         <h3>Contact</h3>
@@ -349,33 +226,10 @@
   </div>
 </section>
 
-<section class="privacy" id="privacy">
-  <div style="max-width:900px;margin:0 auto;">
-    <p class="section-label">Legal</p>
-    <h2 class="section-title">Privacy policy</h2>
-    <div class="privacy-box">
-      <h3>Data we collect</h3>
-      <p><strong>Video:</strong> Video is recorded on-device and processed locally using TensorFlow.js. Video is never uploaded to any server.</p>
-      <p><strong>Pose data:</strong> Body joint coordinates are extracted on-device and used solely to calculate shooting form metrics. This data is not stored beyond the current session unless you choose to save your session history.</p>
-      <p><strong>Session history:</strong> If you choose to save your progress, form scores and metric results are stored locally on your device using AsyncStorage. This data never leaves your device.</p>
-      <h3 style="margin-top:24px;">Data we do not collect</h3>
-      <p>HoopIQ does not collect personal information, does not require account creation, does not use analytics or advertising SDKs, and does not transmit any data to external servers.</p>
-      <h3 style="margin-top:24px;">Permissions</h3>
-      <p><strong>Camera:</strong> Required to record your shot video. Used only when you tap Record.<br>
-      <strong>Microphone:</strong> Required by the Android video recording API. Audio is not used or stored.<br>
-      <strong>Media library:</strong> Required only if you choose to save a share card image to your camera roll.</p>
-      <h3 style="margin-top:24px;">Contact</h3>
-      <p>For privacy questions: <a href="mailto:izzyslns2k25@gmail.com" style="color:var(--orange);">izzyslns2k25@gmail.com</a></p>
-      <p style="margin-top:16px;font-size:13px;">Last updated: April 2026</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Hoop<span>IQ</span></div>
-  <p>© 2026 HoopIQ · Sydney, NSW, Australia</p>
-  <p><a href="#privacy" style="color:var(--muted);text-decoration:none;">Privacy Policy</a></p>
+  <p>© 2026 Ismail Adebayo (IzzySlns) · Sydney, NSW, Australia</p>
+  <a href="https://peaceful-peach-887.notion.site/Privacy-Policy-for-HoopIQ-332b1a59cc3a8020ad91c62f3c0b2ca7" style="color:var(--muted);font-size:13px;text-decoration:none;">Privacy Policy</a>
 </footer>
 
 </body>
